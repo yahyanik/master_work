@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://nl.mathworks.com/help/gads/ga.html -->
+<html class="wf-museoslab-n7-active wf-futurapt-n4-active wf-futurapt-i4-active wf-futurapt-n5-active wf-futurapt-i5-active wf-futurapt-n7-active wf-futurapt-i7-active wf-automate-n7-active wf-minionprosubhead-n4-active wf-active" pmbx_context="AC589C94-C0BF-4192-885A-B7F737E68824"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/site6.css" rel="stylesheet" type="text/css">
+<link href="http://nl.mathworks.com/includes_content/responsive/css/site6_lg.css?20150306" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="http://nl.mathworks.com/includes_content/responsive/css/site6_md.css?20150306" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="http://nl.mathworks.com/includes_content/responsive/css/site6_sm+xs.css?20150306" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="http://nl.mathworks.com/includes_content/responsive/css/site6_sm.css?20150306" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="http://nl.mathworks.com/includes_content/responsive/css/site6_xs.css?20150306" rel="stylesheet" media="screen and (max-width: 767px)">
+<!--[if IE 8]>
+<link href="/includes_content/responsive/css/site6_ie8.css?20150306" rel="stylesheet" type="text/css">
+<script src="/includes_content/responsive/scripts/bootstrap/html5shiv-printshiv.js"></script>
+<script src="/includes_content/responsive/scripts/bootstrap/respond.min.js"></script>
+<script src="/includes_content/responsive/scripts/bootstrap/placeholders.min.js"></script>
+<![endif]-->
+<!--[if IE 9]>
+<link href="/includes_content/responsive/css/site6_ie9.css?20150306" rel="stylesheet" type="text/css">
+<script src="/includes_content/responsive/scripts/bootstrap/placeholders.min.js"></script>
+<![endif]-->
+<link href="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/site6_offcanvas.css" rel="stylesheet" type="text/css">
+<!--[if IE 8]>
+<link href="/includes_content/responsive/css/site6_offcanvas_ie8.css?20150306" rel="stylesheet" type="text/css">
+<script src="/includes_content/responsive/scripts/bootstrap/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript" async="" src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/ahy.js"></script><script src="http://edge.quantserve.com/aquant.js?a=p-zfNtLVVEHXE-1" async="" type="text/javascript"></script><script src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/jquery-latest.js"></script>
+<script src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/jquery.mobile.custom.min.js"></script>
+<script src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/bootstrap.min.js"></script>
+<script src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/global.js"></script>
+<script src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/xvy5baa.js"></script>
+<style type="text/css">.tk-museo-slab{font-family:"museo-slab",serif;}.tk-futura-pt{font-family:"futura-pt","Arial","Helvetica",sans-serif;}.tk-automate{font-family:"automate",sans-serif;}.tk-minion-pro-subhead{font-family:"minion-pro-subhead",serif;}</style><link rel="stylesheet" href="http://fonts.mathworks.com/k/xvy5baa-d.css?3bb2a6e53c9684ffdc9a99f11f5b2a6259e9e580e4938fcb487bcb48ad765cb4c66326ede94ac48d6ede67e4500a24e97a0591ac31cb9a79f653770995b73fcab179c8843e167d4d294efffce20684477e3030043617caba214c58b6f154839e39f8538e92cdd7798839d1a59e4d2b0791bbe6e783a84640f50c6e8f631ac5fd6e2928747046e8d3c8014f4e612066d47cd2f6460236d5af8067bf5be13b5d402fc9b57daa008f4648c576b0daffc4a09719f26748e4d12162f1841b44cd6114f823631817018292249f9424158262729aedfc9a7eaad686e19704ecf794505a5bf58346b86674958b71b58f71e596df71adc85eb06870a8aa3fa53e996a1fc9a87139ba5f47c506b20f3f5af733a35e32b903f3ea3ad28c5600e222fef219fa6d117c0d627897884abcb24d233482306c08ad5732c7ff2a2566cd5fa9554fc45a683e4492630af7837ac201efe374b4410a1ebb0f78147daed230fd70b646914a1bf60c1e5586d424a9779647a2ccd561f26b04a124f9"><script>try{Typekit.load();}catch(e){}</script>
+<!-- BEGIN Adobe DTM -->
+<script src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/satelliteLib-e8d23c2e444abadc572df06537e2def59c01db09.js"></script><script src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/mbox-contents-95c6a4d9c82a8d20476522984666120b54192e9b.js"></script><style>.mboxDefault { visibility:hidden; }</style>
+<!-- END Adobe DTM -->
+<link href="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/doc_center.css" rel="stylesheet" type="text/css">
+<!--[if IE 8]>
+<link href="/includes_content/releases/R2015a/css/doc_center_ie8.css?20150306" rel="stylesheet" type="text/css">
+<![endif]-->
+<!--[if IE 9]>
+<link href="/includes_content/releases/R2015a/css/doc_center_ie9.css?20150306" rel="stylesheet" type="text/css">
+<![endif]-->
+<link href="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<link rel="stylesheet" href="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/docstyle.css" type="text/css">
+<meta name="chunktype" content="refpage">
+<meta name="refentity" itemprop="refentity" content="function:ga">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="fcn">
+<meta name="infotype" itemprop="infotype" content="ref/function">
+<meta name="description" itemprop="description" content="This MATLAB function finds a local unconstrained minimum, x, to the objective function, fitnessfcn.">
+<script type="text/javascript" src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/l10n.js"></script>
+<script type="text/javascript" src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/docscripts.js"></script>
+<script type="text/javascript" src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/mw.toc.js"></script>
+<script type="text/javascript" src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/mw.imagescaling.js"></script>
+<script type="text/javascript" src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/mw.imageanimation.js"></script>
+<script type="text/javascript" src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/mw.breadcrumb.js"></script>
+<script type="text/javascript" src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/jquery.highlight.js"></script>
+<script type="text/javascript" src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/nanoscroller.min.js"></script>
+<script type="text/javascript" src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/doc_omniture.js"></script>
+<!-- Additions/overrides from the doc side -->
+<script type="text/javascript" src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/docsearch.js"></script>
+<script type="text/javascript" src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/jquery.toggleval.js"></script>
+<script type="text/javascript" src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/MathRenderer.js"></script><style type="text/css">math { visibility: hidden; }</style><link type="text/css" rel="stylesheet" href="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/main.css"><script type="text/javascript" src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/dojo.js"></script>
+<style type="text/css" id="ki-gy1-g_"></style><style type="text/css" id="ki-gy1-gh"></style></head>
+  
+<body id="responsive_offcanvas" class="">
+
+  <!-- Mobile TopNav: Start -->
+<div class="header visible-xs visible-sm" id="header_mobile">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle topnav_toggle" data-toggle="collapse" data-target="#topnav_collapse">
+<span class="sr-only">Toggle Main Navigation</span>
+<span class="icon-menu"></span>
+</button>
+<a href="http://nl.mathworks.com/index.html?s_tid=gn_logo" class="svg_link navbar-brand">
+<object data="http://nl.mathworks.com/images/responsive/global/pic-header-mathworks-logo.svg" alt="MathWorks" class="mw_logo" type="image/svg+xml">
+<img src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/pic-header-mathworks-logo.png" class="mw_logo" alt="MathWorks">
+</object>
+</a>
+</div>
+</div>
+</div>
+<div class="row visible-xs visible-sm">
+<div class="col-xs-12">
+<div class="navbar-collapse collapse" id="topnav_collapse">
+<ul class="nav navbar-nav" id="topnav">
+<li class="topnav_products "><a href="http://nl.mathworks.com/products/?s_tid=gn_ps">Products</a></li>
+<li class="topnav_solutions "><a href="http://nl.mathworks.com/solutions/?s_tid=gn_sol">Solutions</a></li>
+<li class="topnav_academia "><a href="http://nl.mathworks.com/academia/?s_tid=gn_acad">Academia</a></li>
+<li class="topnav_support "><a href="http://nl.mathworks.com/support/?s_tid=gn_supp">Support</a></li>
+<li class="topnav_community "><a href="http://nl.mathworks.com/matlabcentral/?s_tid=gn_mlc">Community</a></li>
+<li class="topnav_events "><a href="http://nl.mathworks.com/company/events/?s_tid=gn_ev">Events</a></li>
+<li class="topnav_company "><a href="http://nl.mathworks.com/company/?s_tid=gn_co">Company</a></li>
+<li class="headernav_contact"><a href="http://nl.mathworks.com/company/aboutus/contact_us/?s_tid=gn_cntus">Contact Us</a></li>
+<li class="headernav_store"><a href="http://nl.mathworks.com/store/default.do?s_cid=store_top_nav&s_tid=gn_store">How To Buy</a></li>
+<li class="headernav_login dropdown">
+<a href="http://nl.mathworks.com/help/gads/ga.html#" class="dropdown-toggle" data-toggle="dropdown">
+Log In
+<b class="caret"></b>
+</a>
+<ul class="dropdown-menu" id="mwa-nav">
+<li class="mwa-nav_logout"><a id="mwa-log_in" href="https://nl.mathworks.com/accesslogin/login.do?uri=http://nl.mathworks.com/help/gads/ga.html">Log In</a></li>
+<li class="mwa-nav_account"><a id="mwa-create_account" href="https://nl.mathworks.com/accesslogin/createProfile.do?uri=http://nl.mathworks.com/help/gads/ga.html">Create Account</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<!-- Mobile TopNav: End -->
+<!-- Desktop TopNav: Start -->
+<div class="header hidden-xs hidden-sm" id="header_desktop">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="collapse navbar-collapse" id="headernav_collapse">
+<ul class="nav navbar-nav navbar-right" id="headernav">
+<li class="headernav_contact"><a href="http://nl.mathworks.com/company/aboutus/contact_us/?s_tid=gn_cntus">Contact Us</a></li>
+<li class="headernav_store"><a href="http://nl.mathworks.com/store/default.do?s_cid=store_top_nav&s_tid=gn_store">How To Buy</a></li>
+<li class="headernav_login dropdown">
+<a href="http://nl.mathworks.com/help/gads/ga.html#" class="dropdown-toggle" data-toggle="dropdown">
+Log In
+<b class="caret"></b>
+</a>
+<ul class="dropdown-menu" id="mwa-nav">
+<li class="mwa-nav_logout"><a id="mwa-log_in" href="https://nl.mathworks.com/accesslogin/login.do?uri=http://nl.mathworks.com/help/gads/ga.html">Log In</a></li>
+<li class="mwa-nav_account"><a id="mwa-create_account" href="https://nl.mathworks.com/accesslogin/createProfile.do?uri=http://nl.mathworks.com/help/gads/ga.html">Create Account</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12">
+<div class="navbar-header">
+<div class="logo_container hidden-xs hidden-sm">
+<a href="http://nl.mathworks.com/index.html?s_tid=gn_logo" class="svg_link pull-left">
+<object data="http://nl.mathworks.com/images/responsive/global/pic-header-mathworks-logo.svg" alt="MathWorks" class="mw_logo" type="image/svg+xml">
+<img src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/pic-header-mathworks-logo.png" alt="MathWorks">
+</object>
+</a>
+</div>
+<div class="navbar-collapse collapse hidden-xs hidden-sm">
+<ul class="nav navbar-nav" id="topnav">
+<li class="topnav_products "><a href="http://nl.mathworks.com/products/?s_tid=gn_ps">Products</a></li>
+<li class="topnav_solutions "><a href="http://nl.mathworks.com/solutions/?s_tid=gn_sol">Solutions</a></li>
+<li class="topnav_academia "><a href="http://nl.mathworks.com/academia/?s_tid=gn_acad">Academia</a></li>
+<li class="topnav_support "><a href="http://nl.mathworks.com/support/?s_tid=gn_supp">Support</a></li>
+<li class="topnav_community "><a href="http://nl.mathworks.com/matlabcentral/?s_tid=gn_mlc">Community</a></li>
+<li class="topnav_events "><a href="http://nl.mathworks.com/company/events/?s_tid=gn_ev">Events</a></li>
+<li class="topnav_company "><a href="http://nl.mathworks.com/company/?s_tid=gn_co">Company</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<!-- Desktop TopNav: End -->
+<!-- Conjoined Header: Start -->
+<div class="sticky_header_container includes_subnav affix">
+<!-- Section Header: Start -->
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<div id="search_scope_doc" class="collapse in">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2015a" data-language="en" action="http://nl.mathworks.com/help/search.html" pmbx_context="88B5001A-EDBE-410E-9372-E5C93ACE6376">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search MATLAB Documentation</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search R2015a Documentation" id="docsearch" pmbx_context="56DE8C87-9A29-406D-836A-AA6F711B9A62">
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">Documentation</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<li data-toggle="collapse" data-target="#search_scope_support" class="doc_search_scope_trigger"><a href="http://nl.mathworks.com/help/gads/ga.html#">Support</a></li>
+<li data-toggle="collapse" data-target="#search_scope_site" class="doc_search_scope_trigger"><a href="http://nl.mathworks.com/help/gads/ga.html#">MathWorks</a></li>
+</ul>
+<script>
+$(".doc_search_scope_trigger").click(function() {
+$("#search_scope_doc").removeClass("in");
+$("#search").val($("#docsearch").val());
+$("#query").val($("#docsearch").val());
+});
+</script>
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1" disabled=""></button>
+</div>
+</div>
+</form>
+</div>
+<div id="search_scope_support" class="collapse">
+<form id="support_search" action="http://nl.mathworks.com/support/search_results.html" method="get" accept-charset="utf-8" pmbx_context="20AACE42-094D-407E-87E8-6AC0D84C3F59">
+<div class="input-group">
+<label class="sr-only">Search All Support Resources</label>
+<input id="suggestion" type="hidden" name="suggestion" value="" pmbx_context="0A2AD9E9-7EF3-45AE-8E21-6D09E79C0AD0">
+<span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+<input id="search" class="form-control conjoined_search" type="text" name="q" placeholder="Search All Support Resources" autocomplete="off" pmbx_context="FD382B78-087D-4770-88D3-411203D8BE99">
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">Support</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<li data-toggle="collapse" data-target="#search_scope_doc" class="support_search_scope_trigger"><a href="http://nl.mathworks.com/help/gads/ga.html#">Documentation</a></li>
+<li data-toggle="collapse" data-target="#search_scope_site" class="support_search_scope_trigger"><a href="http://nl.mathworks.com/help/gads/ga.html#">MathWorks</a></li>
+</ul>
+<script>
+$(".support_search_scope_trigger").click(function() {
+$("#search_scope_support").removeClass("in");
+$("#docsearch").val($("#search").val());
+$("#query").val($("#search").val());
+});
+</script>
+<button type="submit" name="submitsearch" id="support_submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<div id="search_scope_site" class="collapse">
+<form name="search" id="site_search" class="site_search" action="http://nl.mathworks.com/search/site_search.html" method="get" pmbx_context="77629FBD-4F70-44AD-87FD-4B404ECB01C8">
+<div class="input-group">
+<label class="sr-only">Search MathWorks.com</label>
+<input type="hidden" name="c[]" value="entire_site_en" pmbx_context="BEC3E88A-981C-47AB-BF73-EDD08DE20F94">
+<input type="text" name="q" id="query" class="form-control conjoined_search" placeholder="Search MathWorks.com" autocomplete="off" pmbx_context="4FEF0D0A-0FD6-4EA9-879A-89D715728D63">
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">MathWorks</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<li data-toggle="collapse" data-target="#search_scope_doc" class="site_search_scope_trigger"><a href="http://nl.mathworks.com/help/gads/ga.html#">Documentation</a></li>
+<li data-toggle="collapse" data-target="#search_scope_support" class="site_search_scope_trigger"><a href="http://nl.mathworks.com/help/gads/ga.html#">Support</a></li>
+</ul>
+<script>
+$(".site_search_scope_trigger").click(function() {
+$("#search_scope_site").removeClass("in");
+$("#search").val($("#query").val());
+$("#docsearch").val($("#query").val());
+});
+</script>
+<button type="submit" id="searchbutton" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title add_cursor_pointer">
+<h1>Documentation</h1>
+</div>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div>
+<script>
+$(".section_header_title").click(function(){
+$(window.location).attr('href', '/help');
+});
+</script>
+<!-- Section Header: End -->
+<!-- Mobile Local Nav: Start -->
+<!-- Mobile Local Nav: End -->
+</div>
+</div>
+<!-- Horo Nav: Start -->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator active" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-menu icon_24"></span>
+</button>
+<span class="offcanvas_actuator_label"></span>
+<span class="offcanvas_actuator_close"></span>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm">
+<div class="cta_box">
+<ul class="list-inline">
+<li class="cta_item cta_item_general"><a href="http://nl.mathworks.com/programs/bounce/doc_tryit.html" class="icon-download">Trial Software</a></li>
+<li class="cta_item cta_item_general"><a href="http://nl.mathworks.com/support/web_downloads_bounce.html?s_cid=1008_degr_docdn_270055" class="icon-download">Product Updates</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Horo Nav: End -->
+</div>
+<!-- Conjoined Header: End -->
+
+  <div class="row-offcanvas row-offcanvas-left active">
+  
+    <div class="sidebar-offcanvas" id="sidebar" role="navigation">
+      <nav class="offcanvas_nav" role="navigation">
+          <ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_breadcrumb">
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="http://nl.mathworks.com/help/index.html" itemprop="url"><span itemprop="title">All Products</span></a></li>
+</ul>
+
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li class="product"><a href="http://nl.mathworks.com/help/gads/index.html">Global Optimization Toolbox</a>
+<div class="dropdown">
+<span class="icon-arrow-down icon_16" id="dropdownMenu1" data-toggle="dropdown"></span>
+<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+<li role="presentation"><a role="menuitem" tabindex="-1" href="http://nl.mathworks.com/help/gads/getting-started-with-global-optimization-toolbox.html?s_cid=doc_flyout">Getting Started</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="http://nl.mathworks.com/help/gads/examples.html?s_cid=doc_flyout">Examples</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="http://nl.mathworks.com/help/gads/functionlist.html?s_cid=doc_flyout">Functions and Other Reference</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="http://nl.mathworks.com/help/gads/release-notes.html?s_cid=doc_flyout">Release Notes</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="http://nl.mathworks.com/help/releases/R2015a/pdf_doc/gads/index.html?s_cid=doc_flyout">PDF Documentation</a></li>
+</ul>
+</div>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="http://nl.mathworks.com/help/gads/genetic-algorithm.html" itemprop="url"><span itemprop="title">Genetic Algorithm</span></a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="http://nl.mathworks.com/help/gads/ga.html#responsive_offcanvas">ga</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-refentry">On this page</li>
+<li class=""><a href="http://nl.mathworks.com/help/gads/ga.html#syntax" class="intrnllnk">Syntax</a></li>
+<li class=""><a href="http://nl.mathworks.com/help/gads/ga.html#zmw57dd0e31031" class="intrnllnk">Description</a></li>
+<li class=""><a href="http://nl.mathworks.com/help/gads/ga.html#inputs" class="intrnllnk">Input Arguments</a></li>
+<li class=""><a href="http://nl.mathworks.com/help/gads/ga.html#zmw57dd0e32305" class="intrnllnk">Output Arguments</a></li>
+<li class="active"><a href="http://nl.mathworks.com/help/gads/ga.html#zmw57dd0e32630" class="intrnllnk">Examples</a></li>
+<li class=""><a href="http://nl.mathworks.com/help/gads/ga.html#zmw57dd0e32689" class="intrnllnk">Alternatives</a></li>
+<li class=""><a href="http://nl.mathworks.com/help/gads/ga.html#moreabout" class="intrnllnk">More About</a><ul class="nav">
+<li class=""><a href="http://nl.mathworks.com/help/gads/ga.html#btr_2so-1" class="intrnllnk">Complementarity Measure</a></li>
+<li class=""><a href="http://nl.mathworks.com/help/gads/ga.html#bs08mt8-3" class="intrnllnk">Tips</a></li>
+<li class=""><a href="http://nl.mathworks.com/help/gads/ga.html#bs08mt8-8" class="intrnllnk">Algorithms</a></li>
+</ul>
+</li><li class=""><a href="http://nl.mathworks.com/help/gads/ga.html#zmw57dd0e32670" class="intrnllnk">References</a></li>
+</ul>
+
+      </nav>
+      <script src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/offcanvas.js"></script>
+    </div>
+
+    <!-- MOBILE CTA - Begin -->
+    <!-- MOBILE CTA - End -->
+
+
+    <div class="content_container" id="content_container">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12">
+            
+
+
+
+
+
+
+           
+     
+    
+           
+<section id="doc_center_content" lang="en"><div id="pgtype-ref-function"><div class="function_ref">
+  
+
+<span id="bs08mt7-1" class="anchor_target"></span><div itemprop="content"><h1 class="r2015a" itemprop="title">ga</h1><!-- SYNCHTO: _bp9c5ht.html --><div class="doc_topic_desc"><div class="purpose_container"><p itemprop="purpose">Find minimum of function using genetic algorithm</p><div class="switch"><a href="javascript:void(0);" id="expandAllPage" data-allexpanded="true">collapse all in page</a></div></div></div></div>
+<div class="ref_sect"><h2 id="syntax">Syntax</h2><div class="syntax_signature"><p class="synopsis"><code>x = ga(fitnessfcn,nvars)<br>x = ga(fitnessfcn,nvars,A,b)<br>x = ga(fitnessfcn,nvars,A,b,Aeq,beq)<br>x = ga(fitnessfcn,nvars,A,b,Aeq,beq,LB,UB)<br>x = ga(fitnessfcn,nvars,A,b,Aeq,beq,LB,UB,nonlcon)<br>x = ga(fitnessfcn,nvars,A,b,Aeq,beq,LB,UB,nonlcon,options)<br>x = ga(fitnessfcn,nvars,A,b,[],[],LB,UB,nonlcon,IntCon)<br>x = ga(fitnessfcn,nvars,A,b,[],[],LB,UB,nonlcon,IntCon,options)<br>x = ga(problem)<br>[x,fval]
+= ga(fitnessfcn,nvars,...)<br>[x,fval,exitflag]
+= ga(fitnessfcn,nvars,...)<br>[x,fval,exitflag,output]
+= ga(fitnessfcn,nvars,...)<br>[x,fval,exitflag,output,population]
+= ga(fitnessfcn,nvars,...)<br>[x,fval,exitflag,output,population,scores]
+= ga(fitnessfcn,nvars,...)<br></code></p></div></div><div class="clear"></div><div itemprop="content" class="ref_sect"><span id="bs08mt8-2" class="anchor_target"></span><h2 id="zmw57dd0e31031">Description</h2><p><span itemprop="syntax"><code><a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_x" class="intrnllnk"><code>x</code></a> = ga(<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_fitnessfcn" class="intrnllnk"><code>fitnessfcn</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nvars" class="intrnllnk"><code>nvars</code></a>)</code></span> finds
+a local unconstrained minimum, <code>x</code>, to the objective
+function, <code>fitnessfcn</code>. <code>nvars</code> is
+the dimension (number of design variables) of <code>fitnessfcn</code>.</p><p><span itemprop="syntax"><code><a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_x" class="intrnllnk"><code>x</code></a> = ga(<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_fitnessfcn" class="intrnllnk"><code>fitnessfcn</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nvars" class="intrnllnk"><code>nvars</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_A" class="intrnllnk"><code>A</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_b" class="intrnllnk"><code>b</code></a>)</code></span> finds
+a local minimum <code>x</code> to <code>fitnessfcn</code>,
+subject to the linear inequalities <code>A*x</code>&nbsp;≤&nbsp;<code>b</code>. <code>ga</code> evaluates
+the matrix product <code>A*x</code> as if <code>x</code> is
+transposed (<code>A*x'</code>).</p><p><span itemprop="syntax"><code><a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_x" class="intrnllnk"><code>x</code></a> = ga(<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_fitnessfcn" class="intrnllnk"><code>fitnessfcn</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nvars" class="intrnllnk"><code>nvars</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_A" class="intrnllnk"><code>A</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_b" class="intrnllnk"><code>b</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_Aeq" class="intrnllnk"><code>Aeq</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_beq" class="intrnllnk"><code>beq</code></a>)</code></span> finds
+a local minimum <code>x</code> to <code>fitnessfcn</code>,
+subject to the linear equalities <code>Aeq*x</code>&nbsp;=&nbsp;<code>beq</code> as well as <code>A*x</code>&nbsp;≤&nbsp;<code>b</code>. (Set <code>A=[]</code> and <code>b=[]</code> if
+no linear inequalities exist.) <code>ga</code> evaluates the
+matrix product <code>Aeq*x</code> as if <code>x</code> is
+transposed (<code>Aeq*x'</code>).</p><p><span itemprop="syntax"><code><a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_x" class="intrnllnk"><code>x</code></a> = ga(<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_fitnessfcn" class="intrnllnk"><code>fitnessfcn</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nvars" class="intrnllnk"><code>nvars</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_A" class="intrnllnk"><code>A</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_b" class="intrnllnk"><code>b</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_Aeq" class="intrnllnk"><code>Aeq</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_beq" class="intrnllnk"><code>beq</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_LB" class="intrnllnk"><code>LB</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_UB" class="intrnllnk"><code>UB</code></a>)</code></span> defines
+a set of lower and upper bounds on the design variables, <code>x</code>,
+so that a solution is found in the range <code>LB&nbsp;</code>≤<code>&nbsp;x&nbsp;</code>≤<code>&nbsp;UB</code>.
+(Set <code>Aeq=[]</code> and <code>beq=[]</code> if no
+linear equalities exist.)</p><p><span itemprop="syntax"><code><a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_x" class="intrnllnk"><code>x</code></a> = ga(<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_fitnessfcn" class="intrnllnk"><code>fitnessfcn</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nvars" class="intrnllnk"><code>nvars</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_A" class="intrnllnk"><code>A</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_b" class="intrnllnk"><code>b</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_Aeq" class="intrnllnk"><code>Aeq</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_beq" class="intrnllnk"><code>beq</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_LB" class="intrnllnk"><code>LB</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_UB" class="intrnllnk"><code>UB</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nonlcon" class="intrnllnk"><code>nonlcon</code></a>)</code></span> subjects
+the minimization to the constraints defined in <code>nonlcon</code>.
+The function <code>nonlcon</code> accepts <code>x</code> and
+returns vectors <code>C</code> and <code>Ceq</code>, representing
+the nonlinear inequalities and equalities respectively. <code>ga</code> minimizes
+the <code>fitnessfcn</code> such that <code>C(x)&nbsp;</code>≤<code>&nbsp;0</code> and <code>Ceq(x)&nbsp;=&nbsp;0</code>. (Set <code>LB=[]</code> and <code>UB=[]</code> if
+no bounds exist.)</p><p><span itemprop="syntax"><code><a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_x" class="intrnllnk"><code>x</code></a> = ga(<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_fitnessfcn" class="intrnllnk"><code>fitnessfcn</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nvars" class="intrnllnk"><code>nvars</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_A" class="intrnllnk"><code>A</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_b" class="intrnllnk"><code>b</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_Aeq" class="intrnllnk"><code>Aeq</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_beq" class="intrnllnk"><code>beq</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_LB" class="intrnllnk"><code>LB</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_UB" class="intrnllnk"><code>UB</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nonlcon" class="intrnllnk"><code>nonlcon</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_options" class="intrnllnk"><code>options</code></a>)</code></span> minimizes
+with the default optimization parameters replaced by values in the
+structure <code>options</code>, which can be created using the <a href="http://nl.mathworks.com/help/gads/gaoptimset.html"><code>gaoptimset</code></a> function. (Set <code>nonlcon=[]</code> if
+no nonlinear constraints exist.)</p><p><span itemprop="syntax"><code><a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_x" class="intrnllnk"><code>x</code></a> = ga(<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_fitnessfcn" class="intrnllnk"><code>fitnessfcn</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nvars" class="intrnllnk"><code>nvars</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_A" class="intrnllnk"><code>A</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_b" class="intrnllnk"><code>b</code></a>,[],[],<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_LB" class="intrnllnk"><code>LB</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_UB" class="intrnllnk"><code>UB</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nonlcon" class="intrnllnk"><code>nonlcon</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_IntCon" class="intrnllnk"><code>IntCon</code></a>)</code></span> requires
+that the variables listed in <code>IntCon</code> take integer
+values.</p><ul><span id="zmw57dd0e31370" class="anchor_target"></span><table cellspacing="0" class="note" summary="Note" cellpadding="5" border="1"><tbody><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+When there are integer constraints, <code>ga</code> does
+not accept linear or nonlinear equality constraints, only inequality
+constraints.</p></td></tr></tbody></table></ul><p><span itemprop="syntax"><code><a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_x" class="intrnllnk"><code>x</code></a> = ga(<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_fitnessfcn" class="intrnllnk"><code>fitnessfcn</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nvars" class="intrnllnk"><code>nvars</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_A" class="intrnllnk"><code>A</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_b" class="intrnllnk"><code>b</code></a>,[],[],<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_LB" class="intrnllnk"><code>LB</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_UB" class="intrnllnk"><code>UB</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nonlcon" class="intrnllnk"><code>nonlcon</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_IntCon" class="intrnllnk"><code>IntCon</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_options" class="intrnllnk"><code>options</code></a>)</code></span> minimizes
+with integer constraints and with the default optimization parameters
+replaced by values in the <code>options</code> structure.</p><p><span itemprop="syntax"><code><a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_x" class="intrnllnk"><code>x</code></a> = ga(<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_problem" class="intrnllnk"><code>problem</code></a>)</code></span> finds
+the minimum for <code>problem</code>, where <code>problem</code> is
+a structure.</p><p><span itemprop="syntax"><code>[<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_x" class="intrnllnk"><code>x</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_fval" class="intrnllnk"><code>fval</code></a>]
+= ga(<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_fitnessfcn" class="intrnllnk"><code>fitnessfcn</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nvars" class="intrnllnk"><code>nvars</code></a>,...)</code></span> returns <code>fval</code>,
+the value of the fitness function at <code>x</code>.</p><p><span itemprop="syntax"><code>[<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_x" class="intrnllnk"><code>x</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_fval" class="intrnllnk"><code>fval</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_exitflag" class="intrnllnk"><code>exitflag</code></a>]
+= ga(<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_fitnessfcn" class="intrnllnk"><code>fitnessfcn</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nvars" class="intrnllnk"><code>nvars</code></a>,...)</code></span> returns <code>exitflag</code>,
+an integer identifying the reason the algorithm terminated.</p><p><span itemprop="syntax"><code>[<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_x" class="intrnllnk"><code>x</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_fval" class="intrnllnk"><code>fval</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_exitflag" class="intrnllnk"><code>exitflag</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_output" class="intrnllnk"><code>output</code></a>]
+= ga(<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_fitnessfcn" class="intrnllnk"><code>fitnessfcn</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nvars" class="intrnllnk"><code>nvars</code></a>,...)</code></span> returns <code>output</code>,
+a structure that contains output from each generation and other information
+about the performance of the algorithm.</p><p><span itemprop="syntax"><code>[<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_x" class="intrnllnk"><code>x</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_fval" class="intrnllnk"><code>fval</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_exitflag" class="intrnllnk"><code>exitflag</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_output" class="intrnllnk"><code>output</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_population" class="intrnllnk"><code>population</code></a>]
+= ga(<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_fitnessfcn" class="intrnllnk"><code>fitnessfcn</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nvars" class="intrnllnk"><code>nvars</code></a>,...)</code></span> returns
+the matrix, <code>population</code>, whose rows are the final
+population.</p><p><span itemprop="syntax"><code>[<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_x" class="intrnllnk"><code>x</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_fval" class="intrnllnk"><code>fval</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_exitflag" class="intrnllnk"><code>exitflag</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_output" class="intrnllnk"><code>output</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_population" class="intrnllnk"><code>population</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_scores" class="intrnllnk"><code>scores</code></a>]
+= ga(<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_fitnessfcn" class="intrnllnk"><code>fitnessfcn</code></a>,<a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nvars" class="intrnllnk"><code>nvars</code></a>,...)</code></span> returns <code>scores</code> the
+scores of the final population.</p></div><div itemprop="content"></div><div itemprop="content" class="ref_sect"><span id="bs08mt8-4" class="anchor_target"></span><h2 id="inputs">Input Arguments</h2><table cellpadding="4" cellspacing="0" width="100%"><tbody><tr valign="top"><td class="firstargumentlistentrycell" width="150"><span id="inputarg_fitnessfcn" class="anchor_target"></span><p><code>fitnessfcn</code></p></td><td class="firstargumentlistentrycell">
+<p>Handle to the fitness function. The fitness function should
+accept a row vector of length <a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nvars" class="intrnllnk"><code>nvars</code></a> and return
+a scalar value.</p>
+<p>When the <code>'Vectorized'</code> option is <code>'on'</code>, <code>fitnessfcn</code> should
+accept a <code>pop</code>-by-<code>nvars</code> matrix,
+where <code>pop</code> is the current population size. In this
+case <code>fitnessfcn</code> should return a vector the same
+length as <code>pop</code> containing the fitness function values. <code>fitnessfcn</code> should
+not assume any particular size for <code>pop</code>, since <code>ga</code> can
+pass a single member of a population even in a vectorized calculation.</p>
+</td></tr><tr valign="top"><td class="argumentlistentrycell"><span id="inputarg_nvars" class="anchor_target"></span><p><code>nvars</code></p></td><td class="argumentlistentrycell">
+<p>Positive integer representing the number of variables in the
+problem.</p>
+</td></tr><tr valign="top"><td class="argumentlistentrycell"><span id="inputarg_A" class="anchor_target"></span><p><code>A</code></p></td><td class="argumentlistentrycell">
+<p>Matrix for linear inequality constraints of the form</p>
+<p class="programlistingindent"><code>A*x</code>&nbsp;≤&nbsp;<code>b</code>.</p>
+<p>If the problem has <code>m</code> linear inequality constraints
+and <code>nvars</code> variables, then</p>
+<ul type="disc"><li><p><code>A</code> is a matrix of size <code>m</code>-by-<code>nvars</code>. </p></li><li><p><code>b</code> is a vector of length <code>m</code>.</p></li></ul>
+<p><code>ga</code> evaluates the matrix product <code>A*x</code> as
+if <code>x</code> is transposed (<code>A*x'</code>).</p>
+<ul><span id="zmw57dd0e31714" class="anchor_target"></span><table cellspacing="0" class="note" summary="Note" cellpadding="5" border="1"><tbody><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+<code>ga</code> does not enforce linear constraints
+to be satisfied when the <code>PopulationType</code> option
+is <code>'bitString'</code> or <code>'custom'</code>.</p></td></tr></tbody></table></ul>
+</td></tr><tr valign="top"><td class="argumentlistentrycell"><span id="inputarg_b" class="anchor_target"></span><p><code>b</code></p></td><td class="argumentlistentrycell">
+<p>Vector for linear inequality constraints of the form</p>
+<p class="programlistingindent"><code>A*x</code>&nbsp;≤&nbsp;<code>b</code>.</p>
+<p>If the problem has <code>m</code> linear inequality constraints
+and <code>nvars</code> variables, then</p>
+<ul type="disc"><li><p><code>A</code> is a matrix of size <code>m</code>-by-<code>nvars</code>. </p></li><li><p><code>b</code> is a vector of length <code>m</code>.</p></li></ul>
+</td></tr><tr valign="top"><td class="argumentlistentrycell"><span id="inputarg_Aeq" class="anchor_target"></span><p><code>Aeq</code></p></td><td class="argumentlistentrycell">
+<p>Matrix for linear equality constraints of the form</p>
+<p class="programlistingindent"><code>Aeq*x</code>&nbsp;=&nbsp;<code>beq</code>.</p>
+<p>If the problem has <code>m</code> linear equality constraints
+and <code>nvars</code> variables, then</p>
+<ul type="disc"><li><p><code>Aeq</code> is a matrix of size <code>m</code>-by-<code>nvars</code>. </p></li><li><p><code>beq</code> is a vector of length <code>m</code>.</p></li></ul>
+<p><code>ga</code> evaluates the matrix product <code>Aeq*x</code> as
+if <code>x</code> is transposed (<code>Aeq*x'</code>).</p>
+<ul><span id="zmw57dd0e31847" class="anchor_target"></span><table cellspacing="0" class="note" summary="Note" cellpadding="5" border="1"><tbody><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+<code>ga</code> does not enforce linear constraints
+to be satisfied when the <code>PopulationType</code> option
+is <code>'bitString'</code> or <code>'custom'</code>.</p></td></tr></tbody></table></ul>
+</td></tr><tr valign="top"><td class="argumentlistentrycell"><span id="inputarg_beq" class="anchor_target"></span><p><code>beq</code></p></td><td class="argumentlistentrycell">
+<p>Vector for linear equality constraints of the form</p>
+<p class="programlistingindent"><code>Aeq*x</code>&nbsp;=&nbsp;<code>beq</code>.</p>
+<p>If the problem has <code>m</code> linear equality constraints
+and <code>nvars</code> variables, then</p>
+<ul type="disc"><li><p><code>Aeq</code> is a matrix of size <code>m</code>-by-<code>nvars</code>. </p></li><li><p><code>beq</code> is a vector of length <code>m</code>.</p></li></ul>
+</td></tr><tr valign="top"><td class="argumentlistentrycell"><span id="inputarg_LB" class="anchor_target"></span><p><code>LB</code></p></td><td class="argumentlistentrycell">
+<p>Vector of lower bounds. <code>ga</code> enforces that
+iterations stay above <code>LB</code>. Set <code>LB(i)</code>&nbsp;=&nbsp;–<code>Inf</code> if <code>x(i)</code>is
+unbounded below.</p>
+<ul><span id="zmw57dd0e31944" class="anchor_target"></span><table cellspacing="0" class="note" summary="Note" cellpadding="5" border="1"><tbody><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+<code>ga</code> does not enforce bounds to be satisfied
+when the <code>PopulationType</code> option is <code>'bitString'</code> or <code>'custom'</code>.</p></td></tr></tbody></table></ul>
+</td></tr><tr valign="top"><td class="argumentlistentrycell"><span id="inputarg_UB" class="anchor_target"></span><p><code>UB</code></p></td><td class="argumentlistentrycell">
+<p>Vector of upper bounds. <code>ga</code> enforces that
+iterations stay below <code>UB</code>. Set <code>UB(i)</code>&nbsp;=&nbsp;<code>Inf</code> if  <code>x(i)</code> is
+unbounded above.</p>
+</td></tr><tr valign="top"><td class="argumentlistentrycell"><span id="inputarg_nonlcon" class="anchor_target"></span><p><code>nonlcon</code></p></td><td class="argumentlistentrycell">
+<p>Function handle that returns two outputs:</p>
+<div class="code_responsive"><pre class="programlisting">[c,ceq] = nonlcon(x)</pre></div>
+<p><code>ga</code> attempts to achieve <code>c</code>&nbsp;≤&nbsp;<code>0</code> and <code>ceq</code>&nbsp;=&nbsp;<code>0</code>. <code>c</code> and <code>ceq</code> are
+row vectors when there are multiple constraints. Set unused outputs
+to <code>[]</code>.</p>
+<p>You can write <code>nonlcon</code> as a function handle
+to a file, such as</p>
+<div class="code_responsive"><pre class="programlisting">nonlcon = @constraintfile</pre></div>
+<p>where <code>constraintfile.m</code> is a file on your MATLAB<sup>®</sup> path.</p>
+<p>To learn how to use vectorized constraints, see <a href="http://nl.mathworks.com/help/gads/constraints.html#bsae672">Vectorized Constraints</a>.</p>
+<ul><span id="zmw57dd0e32056" class="anchor_target"></span><table cellspacing="0" class="note" summary="Note" cellpadding="5" border="1"><tbody><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+<code>ga</code> does not enforce nonlinear constraints
+to be satisfied when the <code>PopulationType</code> option
+is set to <code>'bitString'</code> or <code>'custom'</code>.</p><p>If <a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_IntCon" class="intrnllnk"><code>IntCon</code></a> is not empty, the second output
+of <code>nonlcon</code> (<code>ceq</code>) must be empty
+(<code>[]</code>).</p><p>For information on how <code>ga</code> uses <code>nonlcon</code>,
+see <a href="http://nl.mathworks.com/help/gads/description-of-the-nonlinear-constraint-solver_bqf8bdd.html">Nonlinear Constraint Solver Algorithms</a>.</p></td></tr></tbody></table></ul>
+</td></tr><tr valign="top"><td class="argumentlistentrycell"><span id="inputarg_options" class="anchor_target"></span><p><code>options</code></p></td><td class="argumentlistentrycell">
+<p>Structure containing optimization options. Create <code>options</code> using <a href="http://nl.mathworks.com/help/gads/gaoptimset.html"><code>gaoptimset</code></a>, or by exporting options from the
+Optimization app as described in <a href="http://nl.mathworks.com/help/optim/ug/graphical-optimization-tool.html#bquu7oa-1">Importing and Exporting Your Work</a> in the Optimization Toolbox™ documentation.</p>
+</td></tr><tr valign="top"><td class="argumentlistentrycell"><span id="inputarg_IntCon" class="anchor_target"></span><p><code>IntCon</code></p></td><td class="argumentlistentrycell">
+<p>Vector of positive integers taking values from <code>1</code> to <a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nvars" class="intrnllnk"><code>nvars</code></a>.
+Each value in <code>IntCon</code> represents an <code>x</code> component
+that is integer-valued.</p>
+<ul><span id="zmw57dd0e32142" class="anchor_target"></span><table cellspacing="0" class="note" summary="Note" cellpadding="5" border="1"><tbody><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+When <code>IntCon</code> is nonempty, <a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_Aeq" class="intrnllnk"><code>Aeq</code></a> and <a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_beq" class="intrnllnk"><code>beq</code></a> must
+be empty (<code>[]</code>), and <a href="http://nl.mathworks.com/help/gads/ga.html#inputarg_nonlcon" class="intrnllnk"><code>nonlcon</code></a> must
+return empty for <code>ceq</code>. For more information on integer
+programming, see <a href="http://nl.mathworks.com/help/gads/mixed-integer-optimization.html">Mixed Integer Optimization</a>.</p></td></tr></tbody></table></ul>
+</td></tr><tr valign="top"><td class="argumentlistentrycell"><span id="inputarg_problem" class="anchor_target"></span><p><code>problem</code></p></td><td class="argumentlistentrycell">
+<p>Structure containing the following fields:</p>
+<div class="table-responsive"><table cellspacing="0" class="body" cellpadding="4" border="2"><colgroup><col width="35%"><col width="65%"></colgroup><tbody><tr valign="top"><td><code>fitnessfcn</code></td><td><p>Fitness function</p></td></tr>
+<tr valign="top"><td><code>nvars</code></td><td><p>Number of design variables</p></td></tr>
+<tr valign="top"><td><code>Aineq</code></td><td><p><code>A</code> matrix for linear inequality constraints</p></td></tr>
+<tr valign="top"><td><code>Bineq</code></td><td><p><code>b</code> vector for linear inequality constraints</p></td></tr>
+<tr valign="top"><td><code>Aeq</code></td><td><p><code>Aeq</code> matrix for linear equality constraints</p></td></tr>
+<tr valign="top"><td><code>Beq</code></td><td><p><code>beq</code> vector for linear equality constraints</p></td></tr>
+<tr valign="top"><td><code>lb</code></td><td><p>Lower bound on <code>x</code></p></td></tr>
+<tr valign="top"><td><code>ub</code></td><td><p>Upper bound on <code>x</code></p></td></tr>
+<tr valign="top"><td><code>nonlcon</code></td><td><p>Nonlinear constraint function</p></td></tr>
+<tr valign="top"><td><code>rngstate</code></td><td><p>Optional field to reset the state of the random number
+generator</p></td></tr>
+<tr valign="top"><td><code>intcon</code></td><td><p>Index vector of integer variables</p></td></tr>
+<tr valign="top"><td><code>solver</code></td><td><p><code>'ga'</code></p></td></tr>
+<tr valign="top"><td><code>options</code></td><td><p>Options structure created using <a href="http://nl.mathworks.com/help/gads/gaoptimset.html"><code>gaoptimset</code></a> or
+the Optimization app</p></td></tr>
+</tbody></table></div><p></p>
+<p>Create <code>problem</code> by exporting a problem from
+the Optimization app, as described in <a href="http://nl.mathworks.com/help/optim/ug/graphical-optimization-tool.html#bquu7oa-1">Importing and Exporting Your Work</a> in
+the Optimization Toolbox documentation.</p>
+</td></tr></tbody></table></div><div itemprop="content" class="ref_sect"><span id="bs08mt8-5" class="anchor_target"></span><h2 id="zmw57dd0e32305">Output Arguments</h2><table cellpadding="4" cellspacing="0" width="100%"><tbody><tr valign="top"><td class="firstargumentlistentrycell" width="150"><span id="outputarg_x" class="anchor_target"></span><p><code>x</code></p></td><td class="firstargumentlistentrycell">
+<p>Best point that <code>ga</code> located during its iterations.</p>
+</td></tr><tr valign="top"><td class="argumentlistentrycell"><span id="outputarg_fval" class="anchor_target"></span><p><code>fval</code></p></td><td class="argumentlistentrycell">
+<p>Fitness function evaluated at <a href="http://nl.mathworks.com/help/gads/ga.html#outputarg_x" class="intrnllnk"><code>x</code></a>.</p>
+</td></tr><tr valign="top"><td class="argumentlistentrycell"><span id="outputarg_exitflag" class="anchor_target"></span><p><code>exitflag</code></p></td><td class="argumentlistentrycell">
+<p>Integer giving the reason <code>ga</code> stopped iterating:</p>
+<div class="table-responsive"><table cellspacing="0" class="body" cellpadding="4" border="2"><colgroup><col width="17%"><col width="83%"></colgroup><thead><tr valign="top"><th valign="top">Exit Flag</th><th valign="top">Meaning</th></tr>
+</thead><tbody><tr valign="top"><td rowspan="2"><code>1</code></td><td><p><b>Without nonlinear constraints</b> —
+Average cumulative change in value of the fitness function over <code>StallGenLimit</code> generations
+is less than <code>TolFun</code>, and the constraint violation
+is less than <code>TolCon</code>.</p></td></tr>
+<tr valign="top"><td><p><b>With nonlinear constraints</b> —
+Magnitude of the complementarity measure (see <a href="http://nl.mathworks.com/help/gads/ga.html#btr_2so-1" class="intrnllnk">Complementarity Measure</a>) is less than <code>sqrt(TolCon)</code>,
+the subproblem is solved using a tolerance less than <code>TolFun</code>,
+and the constraint violation is less than <code>TolCon</code>.</p></td></tr>
+<tr valign="top"><td><code>2</code></td><td><p>Fitness limit reached and the constraint violation is
+less than <code>TolCon</code>.</p></td></tr>
+<tr valign="top"><td><code>3</code></td><td><p>Value of the fitness function did not change in <code>StallGenLimit</code> generations
+and the constraint violation is less than <code>TolCon</code>.</p></td></tr>
+<tr valign="top"><td><code>4</code></td><td><p>Magnitude of step smaller than machine precision and
+the constraint violation is less than <code>TolCon</code>.</p></td></tr>
+<tr valign="top"><td><code>5</code></td><td><p>Minimum fitness limit <code>FitnessLimit</code> reached
+and the constraint violation is less than <code>TolCon</code>.</p></td></tr>
+<tr valign="top"><td><code>0</code></td><td><p>Maximum number of generations <code>Generations</code> exceeded.</p></td></tr>
+<tr valign="top"><td><code>-1</code></td><td><p>Optimization terminated by an output function or plot
+function.</p></td></tr>
+<tr valign="top"><td><code>-2</code></td><td><p>No feasible point found.</p></td></tr>
+<tr valign="top"><td><code>-4</code></td><td><p>Stall time limit <code>StallTimeLimit</code> exceeded.</p></td></tr>
+<tr valign="top"><td><code>-5</code></td><td><p>Time limit <code>TimeLimit</code> exceeded.</p></td></tr>
+</tbody></table></div><p></p>
+<p>When there are integer constraints, <code>ga</code> uses
+the penalty fitness value instead of the fitness value for stopping
+criteria.</p>
+</td></tr><tr valign="top"><td class="argumentlistentrycell"><span id="outputarg_output" class="anchor_target"></span><p><code>output</code></p></td><td class="argumentlistentrycell">
+<p>Structure containing output from each generation and other information
+about algorithm performance. The <code>output</code> structure
+contains the following fields:</p>
+<ul type="disc"><li><p><code>problemtype</code> — String describing
+the type of problem, one of:</p><ul type="circle"><li><p><code>'unconstrained'</code></p></li><li><p><code>'boundconstraints'</code></p></li><li><p><code>'linearconstraints'</code></p></li><li><p><code>'nonlinearconstr'</code></p></li><li><p><code>'integerconstraints'</code></p></li></ul></li><li><p><code>rngstate</code> — State of the MATLAB random
+number generator, just before the algorithm started. You can use the
+values in <code>rngstate</code> to reproduce the output of <code>ga</code>.
+See <a href="http://nl.mathworks.com/help/gads/reproducing-your-results-1.html">Reproduce Results</a>.</p></li><li><p><code>generations</code> — Number of
+generations computed.</p></li><li><p><code>funccount</code> — Number of evaluations
+of the fitness function.</p></li><li><p><code>message</code> — Reason the algorithm
+terminated.</p></li><li><p><code>maxconstraint</code> — Maximum
+constraint violation, if any.</p></li></ul>
+</td></tr><tr valign="top"><td class="argumentlistentrycell"><span id="outputarg_population" class="anchor_target"></span><p><code>population</code></p></td><td class="argumentlistentrycell">
+<p>Matrix whose rows contain the members of the final population.</p>
+</td></tr><tr valign="top"><td class="argumentlistentrycell"><span id="outputarg_scores" class="anchor_target"></span><p><code>scores</code></p></td><td class="argumentlistentrycell">
+<p>Column vector of the fitness values (scores for <code>integerconstraints</code> problems)
+of the final population.</p>
+</td></tr></tbody></table></div><div itemprop="content"></div><div itemprop="content" class="ref_sect"><span id="bs08mt8-7" class="anchor_target"></span><h2 id="zmw57dd0e32630">Examples</h2><p>Given the following inequality constraints and lower bounds</p><p class="programlistingindent"><!--MathType@Translator@5@5@MathML2(Clipboard).tdl@MathML2.0(Clipboard)@--><span><span class="MathEquation Windows"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathMatrix VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: -27px;"><span class="HBox" style="display: block; position: relative; margin-top: 0px;"><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: 0px;"><span class="HBox" style="display: block; position: relative; margin-top: 0px;"><span class="VBox" style="display: inline-block; position: relative; height: 58px; vertical-align: -26px;"></span><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathDelimiter StretchyBox" style="display: inline-block; position: relative; text-align: left; height: 54px; width: 9px; vertical-align: -22px;"><span class="MathTextBox extra" style="position: absolute; display: block; top: 3px;"></span><span class="MathTextBox extra" style="position: absolute; display: block; top: 26px;"></span><span class="MathTextBox extra" style="position: absolute; display: block; top: 33px;"></span></span><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathMatrix VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: -19px;"><span class="HBox" style="display: block; position: relative; margin-top: 0px;"><span class="VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: 0px;"><span class="HBox" style="display: block; position: relative; margin-top: 0px;"><span class="VBox" style="display: inline-block; position: relative; height: 17px; vertical-align: -6px;"></span><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathText MathTextBox number" style="position: relative;">1</span></span><span class="WhiteSpaceBox" style="display: inline-block; position: relative; width: 11px;"></span></span><span class="HBox" style="display: block; position: relative; margin-top: 0px;"><span class="VBox" style="display: inline-block; position: relative; height: 20px; vertical-align: -6px;"></span><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathText MathTextBox symbol" style="position: relative;">−</span><span class="MathText MathTextBox number" style="position: relative; padding-left: 3px;">1</span></span><span class="WhiteSpaceBox" style="display: inline-block; position: relative; width: 11px;"></span></span><span class="HBox" style="display: block; position: relative; margin-top: 0px;"><span class="VBox" style="display: inline-block; position: relative; height: 17px; vertical-align: -3px;"></span><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span><span class="WhiteSpaceBox" style="display: inline-block; position: relative; width: 11px;"></span></span></span><span class="VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: 0px;"><span class="HBox" style="display: block; position: relative; margin-top: 0px;"><span class="VBox" style="display: inline-block; position: relative; height: 17px; vertical-align: -6px;"></span><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathText MathTextBox number" style="position: relative;">1</span></span><span class="WhiteSpaceBox" style="display: inline-block; position: relative; width: 0px;"></span></span><span class="HBox" style="display: block; position: relative; margin-top: 0px;"><span class="VBox" style="display: inline-block; position: relative; height: 20px; vertical-align: -6px;"></span><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span><span class="WhiteSpaceBox" style="display: inline-block; position: relative; width: 0px;"></span></span><span class="HBox" style="display: block; position: relative; margin-top: 0px;"><span class="VBox" style="display: inline-block; position: relative; height: 17px; vertical-align: -3px;"></span><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathText MathTextBox number" style="position: relative;">1</span></span><span class="WhiteSpaceBox" style="display: inline-block; position: relative; width: 0px;"></span></span></span></span></span></span><span class="MathDelimiter StretchyBox" style="display: inline-block; position: relative; text-align: left; height: 54px; width: 9px; vertical-align: -22px;"><span class="MathTextBox extra" style="position: absolute; display: block; top: 3px;"></span><span class="MathTextBox extra" style="position: absolute; display: block; top: 26px;"></span><span class="MathTextBox extra" style="position: absolute; display: block; top: 33px;"></span></span></span><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathDelimiter StretchyBox" style="display: inline-block; position: relative; text-align: left; height: 46px; width: 9px; vertical-align: -18px;"><span class="MathTextBox extra" style="position: absolute; display: block; top: 3px;"></span><span class="MathTextBox extra" style="position: absolute; display: block; top: 25px;"></span></span><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathMatrix VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: -9px;"><span class="HBox" style="display: block; position: relative; margin-top: 0px;"><span class="VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: 0px;"><span class="HBox" style="display: block; position: relative; margin-top: 0px;"><span class="VBox" style="display: inline-block; position: relative; height: 23px; vertical-align: -12px;"></span><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathScript HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathText MathTextBox text" style="position: relative;">x</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -6px;"><span class="MathRow HBox" style="display: block; position: relative; margin-top: -2px;"><span class="MathText MathTextBox number" style="position: relative; font-size: 0.8em;">1</span></span></span></span></span><span class="WhiteSpaceBox" style="display: inline-block; position: relative; width: 0px;"></span></span><span class="HBox" style="display: block; position: relative; margin-top: 0px;"><span class="VBox" style="display: inline-block; position: relative; height: 23px; vertical-align: -9px;"></span><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathScript HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathText MathTextBox text" style="position: relative;">x</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -6px;"><span class="MathRow HBox" style="display: block; position: relative; margin-top: -2px;"><span class="MathText MathTextBox number" style="position: relative; font-size: 0.8em;">2</span></span></span></span></span><span class="WhiteSpaceBox" style="display: inline-block; position: relative; width: 0px;"></span></span></span></span></span></span><span class="MathDelimiter StretchyBox" style="display: inline-block; position: relative; text-align: left; height: 46px; width: 9px; vertical-align: -18px;"><span class="MathTextBox extra" style="position: absolute; display: block; top: 3px;"></span><span class="MathTextBox extra" style="position: absolute; display: block; top: 25px;"></span></span></span><span class="MathText MathTextBox symbol" style="position: relative; padding-left: 4px;">≤</span><span class="MathRow HBox" style="display: inline-block; position: relative; padding-left: 4px;"><span class="MathDelimiter StretchyBox" style="display: inline-block; position: relative; text-align: left; height: 54px; width: 9px; vertical-align: -22px;"><span class="MathTextBox extra" style="position: absolute; display: block; top: 3px;"></span><span class="MathTextBox extra" style="position: absolute; display: block; top: 26px;"></span><span class="MathTextBox extra" style="position: absolute; display: block; top: 33px;"></span></span><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathMatrix VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: -19px;"><span class="HBox" style="display: block; position: relative; margin-top: 0px;"><span class="VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: 0px;"><span class="HBox" style="display: block; position: relative; margin-top: 0px;"><span class="VBox" style="display: inline-block; position: relative; height: 17px; vertical-align: -6px;"></span><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span><span class="WhiteSpaceBox" style="display: inline-block; position: relative; width: 0px;"></span></span><span class="HBox" style="display: block; position: relative; margin-top: 0px;"><span class="VBox" style="display: inline-block; position: relative; height: 20px; vertical-align: -6px;"></span><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span><span class="WhiteSpaceBox" style="display: inline-block; position: relative; width: 0px;"></span></span><span class="HBox" style="display: block; position: relative; margin-top: 0px;"><span class="VBox" style="display: inline-block; position: relative; height: 17px; vertical-align: -3px;"></span><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathText MathTextBox number" style="position: relative;">3</span></span><span class="WhiteSpaceBox" style="display: inline-block; position: relative; width: 0px;"></span></span></span></span></span></span><span class="MathDelimiter StretchyBox" style="display: inline-block; position: relative; text-align: left; height: 54px; width: 9px; vertical-align: -22px;"><span class="MathTextBox extra" style="position: absolute; display: block; top: 3px;"></span><span class="MathTextBox extra" style="position: absolute; display: block; top: 26px;"></span><span class="MathTextBox extra" style="position: absolute; display: block; top: 33px;"></span></span></span><span class="MathText MathTextBox symbol" style="position: relative;">,</span></span><span class="WhiteSpaceBox" style="display: inline-block; position: relative; width: 0px;"></span></span><span class="HBox" style="display: block; position: relative; margin-top: 0px;"><span class="VBox" style="display: inline-block; position: relative; height: 23px; vertical-align: -9px;"></span><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathScript HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathText MathTextBox text" style="position: relative;">x</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -6px;"><span class="MathRow HBox" style="display: block; position: relative; margin-top: -2px;"><span class="MathText MathTextBox number" style="position: relative; font-size: 0.8em;">1</span></span></span></span><span class="MathText MathTextBox symbol" style="position: relative; padding-left: 4px;">≥</span><span class="MathText MathTextBox number" style="position: relative; padding-left: 4px;">0</span><span class="MathText MathTextBox symbol" style="position: relative;">,</span><span class="MathText MathTextBox code" style="position: relative; padding-left: 3px; font-style: normal;">&nbsp;&nbsp;</span><span class="MathScript HBox" style="display: inline-block; position: relative; padding-left: 3px;"><span class="MathRow HBox" style="display: inline-block; position: relative;"><span class="MathText MathTextBox text" style="position: relative;">x</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -6px;"><span class="MathRow HBox" style="display: block; position: relative; margin-top: -2px;"><span class="MathText MathTextBox number" style="position: relative; font-size: 0.8em;">2</span></span></span></span><span class="MathText MathTextBox symbol" style="position: relative; padding-left: 4px;">≥</span><span class="MathText MathTextBox number" style="position: relative; padding-left: 4px;">0</span><span class="MathText MathTextBox symbol" style="position: relative;">,</span></span><span class="WhiteSpaceBox" style="display: inline-block; position: relative; width: 0px;"></span></span></span></span></span></span></span></span></span><!--MathType@End@5@5@--></p><p>use this code to find the minimum of the <code>lincontest6</code> function,
+which is provided in your software:</p><div class="code_responsive"><pre class="programlisting">A = [1 1; -1 2; 2 1];
+b = [2; 2; 3];
+lb = zeros(2,1);
+[x,fval,exitflag] = ga(@lincontest6,... 
+    2,A,b,[],[],lb)
+
+Optimization terminated: average change in
+the fitness value less than options.TolFun.
+
+x =
+    0.6700    1.3310
+
+fval =
+   -8.2218
+
+exitflag =
+     1</pre></div><div class="separator"></div><p>Optimize a function where some variables must be integers:</p><div class="code_responsive"><pre class="programlisting">fun = @(x) (x(1) - 0.2)^2 + ...
+    (x(2) - 1.7)^2 + (x(3) - 5.1)^2;
+x = ga(fun,3,[],[],[],[],[],[],[], ...
+   [2 3]) % variables 2 and 3 are integers
+
+Optimization terminated: average change
+in the penalty fitness value less
+than options.TolFun and constraint violation
+is less than options.TolCon.
+
+x =
+    0.2000    2.0000    5.0000</pre></div></div><div itemprop="content" class="ref_sect"></div><div itemprop="content" class="ref_sect"><span id="bs08mt8-10" class="anchor_target"></span><h2 id="zmw57dd0e32689">Alternatives</h2><p>For problems without integer constraints, consider using <a href="http://nl.mathworks.com/help/gads/patternsearch.html"><code>patternsearch</code></a> instead of <code>ga</code>.</p></div><div class="clear"></div><div class="moreabout ref_sect"><h2 id="moreabout">More About</h2><div class="expandableContent"><p class="switch"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="expandableContent" itemprop="content"><span id="btr_2so-1" class="anchor_target"></span><h3 class="expand expanded" id="btr_2so-1"><span><a style="display:block;" href="javascript:void(0);" title="Expand/Collapse"><span>Complementarity Measure</span></a></span></h3><div class="collapse" style="display:block"><p>In the nonlinear constraint solver, the complementarity measure
+is the norm of the vector whose elements are <i>c<sub>i</sub>λ<sub>i</sub></i>,
+where <i>c<sub>i</sub></i> is the nonlinear
+inequality constraint violation, and <i>λ<sub>i</sub></i> is
+the corresponding Lagrange multiplier.</p></div></div><div class="expandableContent" itemprop="content"><span id="bs08mt8-3" class="anchor_target"></span><h3 class="expand expanded" id="bs08mt8-3"><span><a style="display:block;" href="javascript:void(0);" title="Expand/Collapse"><span>Tips</span></a></span></h3><div class="collapse" style="display:block"><ul type="disc"><li><p>To write a function with additional parameters to
+the independent variables that can be called by <code>ga</code>,
+see <a href="http://nl.mathworks.com/help/optim/ug/passing-extra-parameters.html">Passing Extra Parameters</a> in
+the Optimization Toolbox documentation.</p></li><li><p>For problems that use the population type <code>Double
+Vector</code> (the default), <code>ga</code> does not accept
+functions whose inputs are of type <code>complex</code>. To
+solve problems involving complex data, write your functions so that
+they accept real vectors, by separating the real and imaginary parts.</p></li></ul></div></div><div class="expandableContent" itemprop="content"><span id="bs08mt8-8" class="anchor_target"></span><h3 class="expand expanded" id="bs08mt8-8"><span><a style="display:block;" href="javascript:void(0);" title="Expand/Collapse"><span>Algorithms</span></a></span></h3><div class="collapse" style="display:block"><p>For a description of the genetic algorithm, see <a href="http://nl.mathworks.com/help/gads/how-the-genetic-algorithm-works.html">How the Genetic Algorithm Works</a>.</p><p>For a description of the mixed integer programming algorithm,
+see <a href="http://nl.mathworks.com/help/gads/mixed-integer-optimization.html#bs1cihn">Integer ga Algorithm</a>.</p><p>For a description of the nonlinear constraint algorithm, see <a href="http://nl.mathworks.com/help/gads/description-of-the-nonlinear-constraint-solver_bqf8bdd.html">Nonlinear Constraint Solver Algorithms</a>.</p></div></div><ul><li><a href="http://nl.mathworks.com/help/gads/genetic-algorithm.html">Genetic Algorithm</a></li><li><a href="http://nl.mathworks.com/help/gads/getting-started-with-global-optimization-toolbox.html">Getting Started with Global Optimization Toolbox</a></li><li><a href="http://nl.mathworks.com/help/gads/optimization-problem-setup.html">Optimization Problem Setup</a></li></ul></div></div><div itemprop="content" class="ref_sect"><span id="btzwmpg" class="anchor_target"></span><h2 id="zmw57dd0e32670">References</h2><div class="bibliography"><span id="zmw57dd0e32673" class="anchor_target"></span><div id="BIBLIO.zmw57dd0e32673" class="bibliomixed"><p>[1] Goldberg, David E., <i>Genetic Algorithms in
+Search, Optimization &amp; Machine Learning</i>, Addison-Wesley,
+1989. </p></div><span id="zmw57dd0e32678" class="anchor_target"></span><div id="BIBLIO.zmw57dd0e32678" class="bibliomixed"><p>[2] A. R. Conn, N. I. M. Gould, and Ph. L. Toint. "A
+Globally Convergent Augmented Lagrangian Algorithm for Optimization
+with General Constraints and Simple Bounds", <i>SIAM
+Journal on Numerical Analysis</i>, Volume 28, Number 2, pages
+545–572, 1991.</p></div><span id="zmw57dd0e32683" class="anchor_target"></span><div id="BIBLIO.zmw57dd0e32683" class="bibliomixed"><p>[3] A. R. Conn, N. I. M. Gould, and Ph. L. Toint. "A
+Globally Convergent Augmented Lagrangian Barrier Algorithm for Optimization
+with General Inequality Constraints and Simple Bounds", <i>Mathematics
+of Computation</i>, Volume 66, Number 217, pages 261–288,
+1997.</p></div></div></div><div class="ref_sect"><h2>See Also</h2><p><span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="http://nl.mathworks.com/help/gads/gamultiobj.html"><span itemprop="name"><code>gamultiobj</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="http://nl.mathworks.com/help/gads/gaoptimset.html"><span itemprop="name"><code>gaoptimset</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="http://nl.mathworks.com/help/gads/particleswarm.html"><span itemprop="name"><code>particleswarm</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="http://nl.mathworks.com/help/gads/patternsearch.html"><span itemprop="name"><code>patternsearch</code></span></a></span></p>
+</div>
+</div></div></section>
+<div class="feedbackblock">Was this topic helpful?
+<input type="button" value="Yes" onclick="openFeedbackWindow(&#39;http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams=&#39;+document.location.href+&#39;-YES-R2015a&#39;);">
+<input type="button" value="No" onclick="openFeedbackWindow(&#39;http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams=&#39;+document.location.href+&#39;-NO-R2015a&#39;);">
+</div>
+<!--Last updated: Thu Feb 26 21:38:04 EST 2015-->
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE CTA - Begin -->
+    <div class="cta_container_mobile visible-sm visible-xs">
+      <div class="container-fluid">      
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="cta_box">
+<ul class="list-inline">
+<li class="cta_item cta_item_general"><a href="http://nl.mathworks.com/programs/bounce/doc_tryit.html" class="icon-download">Trial Software</a></li>
+<li class="cta_item cta_item_general"><a href="http://nl.mathworks.com/support/web_downloads_bounce.html?s_cid=1008_degr_docdn_270055" class="icon-download">Product Updates</a></li>
+</ul>
+</div> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MOBILE CTA - End -->
+
+        <!-- BODY TRAIL - Begin -->
+        <div class="body_trail_container">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="row"><div class="col-xs-12 col-sm-3"><h5><a href="http://nl.mathworks.com/help/gads/index.html">Global Optimization Toolbox Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://nl.mathworks.com/help/gads/getting-started-with-global-optimization-toolbox.html?s_cid=doc_ftr">Getting Started</a></li>
+<li><a href="http://nl.mathworks.com/help/gads/examples.html?s_cid=doc_ftr">Examples</a></li>
+<li><a href="http://nl.mathworks.com/help/gads/functionlist.html?s_cid=doc_ftr">Functions and Other Reference</a></li>
+<li><a href="http://nl.mathworks.com/help/gads/release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+<li><a href="http://nl.mathworks.com/help/releases/R2015a/pdf_doc/gads/index.html?s_cid=doc_ftr">PDF Documentation</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="http://nl.mathworks.com/help/index.html">Other Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://nl.mathworks.com/help/optim/index.html">Optimization Toolbox</a></li><li><a href="http://nl.mathworks.com/help/matlab/index.html">MATLAB</a></li><li><a href="http://nl.mathworks.com/help/distcomp/index.html">Parallel Computing Toolbox</a></li><li><a href="http://nl.mathworks.com/help/stats/index.html">Statistics and Machine Learning Toolbox</a></li><li><a href="http://nl.mathworks.com/help/symbolic/index.html">Symbolic Math Toolbox</a></li><li><a href="http://nl.mathworks.com/help/index.html">All Products</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="http://nl.mathworks.com/support">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://nl.mathworks.com/matlabcentral/answers">MATLAB Answers</a></li><li><a href="http://nl.mathworks.com/support/install-matlab.html">Installation Help</a></li><li><a href="http://nl.mathworks.com/support/bugreports">Bug Reports</a></li><li><a href="http://nl.mathworks.com/products/availability">Product Requirements</a></li><li><a href="http://nl.mathworks.com/download">Software Downloads</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-3">
+<div class="panel panel_color_transparent panel_color_fill">
+<div class="panel-body"> <img src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/bg-trial-arrow_02.png" class="add_margin_5">
+<h4>Try MATLAB, Simulink, and Other Products</h4>
+<a href="http://nl.mathworks.com/programs/trials/trial_request.html?prodcode=GD&s_iid=doc_trial_GD_footer" class="icon-chevron">Get trial now </a>
+</div>
+</div>
+</div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- BODY TRAIL - End -->
+
+    <footer id="footer" class="bs-footer">
+        <!-- FAT FOOTER - Begin --> 
+        <div class="container-fluid">
+          <div class="fat_footer_container">
+            <div class="execmatlabproduct">
+<p class="copyright">© 1994-2015 The MathWorks, Inc.</p>
+<ul class="footernav">
+<li class="footernav_acknowledgments"><a href="matlab:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li>
+<li class="footernav_trademarks"><a href="matlab:web([matlabroot '/trademarks.txt'])">Trademarks</a></li>
+<li class="footernav_patents"><a href="matlab:web([matlabroot '/patents.txt'])">Patents</a></li>
+<li class="footernav_terms"><a href="matlab:web(matlab.internal.licenseAgreement)">Terms of Use</a></li>
+</ul>
+</div>
+          </div>
+        </div>
+        <!-- FAT FOOTER - End -->
+      <div class="container-fluid">
+       <div class="footer">
+<div class="row">
+<div class="col-xs-12 col-lg-9">
+<ul class="countrynav" id="countrynav">
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li class="footernav_country">
+<a href="javascript:void(0);" data-html="true" data-container="body" data-toggle="popover" data-placement="top" data-content="&lt;div class=&#39;row&#39;&gt;&lt;div class=&#39;col-xs-12 col-sm-6&#39;&gt;&lt;ul class=&#39;list-unstyled&#39;&gt;&lt;li&gt;&lt;a href=&#39;http://www.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;United States&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://www.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;Canada&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://au.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;Australia&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://de.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;Österreich&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://nl.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;Belgium&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://cn.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;中国&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://se.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;Denmark&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://se.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;Finland&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://fr.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;France&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://de.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;Deutschland&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://in.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;India&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://uk.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;Ireland&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://it.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;Italia&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div class=&#39;col-xs-12 col-sm-6&#39;&gt;&lt;ul class=&#39;list-unstyled&#39;&gt;&lt;li&gt;&lt;a href=&#39;http://jp.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;日本&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://kr.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;한국&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://nl.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;Luxembourg&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://nl.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;Netherlands&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://au.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;New Zealand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://se.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;Norway&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://www.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;Portugal&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://es.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;España&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://se.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;Sweden&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://ch.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;Schweiz / Suisse&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://uk.mathworks.com/help/gads/ga.html?action=changeCountry&amp;s_tid=gn_loc_drop&#39;&gt;United Kingdom&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#39;http://nl.mathworks.com/company/worldwide/?s_tid=gn_loc_drop&#39;&gt;All Other Countries&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;/ul&gt;" data-original-title="" title="">
+<span class="icon-arrow-up"></span><span class="icon-globe"></span>Benelux
+</a>
+<script>
+$('.footernav_country a').popover();
+</script>
+</li>
+</ul>
+<div class="clearfix"></div>
+<ul class="footernav">
+<li class="footernav_patents"><a href="http://nl.mathworks.com/company/aboutus/policies_statements/patents.html?s_tid=gf_pat">Patents</a></li>
+<li class="footernav_trademarks"><a href="http://nl.mathworks.com/company/aboutus/policies_statements/trademarks.html?s_tid=gf_trd">Trademarks</a></li>
+<li class="footernav_privacy"><a href="http://nl.mathworks.com/company/aboutus/policies_statements/?s_tid=gf_priv">Privacy Policy</a></li>
+<li class="footernav_piracy"><a href="http://nl.mathworks.com/company/aboutus/policies_statements/piracy.html?s_tid=gf_pir">Preventing Piracy</a></li>
+</ul>
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+<p class="copyright">© 1994-2015 The MathWorks, Inc.</p>
+</div>
+<div class="clearfix visible-sm add_margin_10"></div>
+<div class="col-xs-12 col-lg-3">
+<div class="social_media">
+<ul class="social_media_icons">
+<li>
+<a href="http://nl.mathworks.com/programs/bounce_hub_generic.html?s_tid=mlc_fbk&url=http://www.facebook.com/MATLAB" target="_blank" class="svg_link">
+<object data="http://nl.mathworks.com/images/responsive/global/ico-facebook.svg" alt="Facebook" class="ico_facebook" type="image/svg+xml">
+<span class="ico_facebook ico_sm"></span>
+</object>
+</a>
+</li>
+<li>
+<a href="http://nl.mathworks.com/programs/bounce_hub_generic.html?s_tid=mlc_twt&url=http://www.twitter.com/MATLAB" target="_blank" class="svg_link">
+<object data="http://nl.mathworks.com/images/responsive/global/ico-twitter.svg" alt="Twitter" class="ico_twitter" type="image/svg+xml">
+<span class="ico_twitter ico_sm"></span>
+</object>
+</a>
+</li>
+<li>
+<a href="http://nl.mathworks.com/programs/bounce_hub_generic.html?s_tid=mlc_glg&url=https://plus.google.com/117177960465154322866?prsrc=3" target="_blank" class="svg_link">
+<object data="http://nl.mathworks.com/images/responsive/global/ico-google-plus.svg" alt="Google+" class="ico_google" type="image/svg+xml">
+<span class="ico_google ico_sm"></span>
+</object>
+</a>
+</li>
+<li>
+<a href="http://nl.mathworks.com/programs/bounce_hub_generic.html?s_tid=mlc_lkd&url=http://www.linkedin.com/company/the-mathworks_2" target="_blank" class="svg_link">
+<object data="http://nl.mathworks.com/images/responsive/global/ico-linkedin.svg" alt="LinkedIn" class="ico_linkedin" type="image/svg+xml">
+<span class="ico_linkedin ico_sm"></span>
+</object>
+</a>
+</li>
+<li>
+<a href="http://nl.mathworks.com/company/rss/index.html" class="svg_link">
+<object data="http://nl.mathworks.com/images/responsive/global/ico-rss.svg" alt="RSS" class="ico_rss" type="image/svg+xml">
+<span class="ico_rss ico_sm"></span>
+</object>
+</a>
+</li>
+</ul>
+<div class="clearfix"></div>
+<p><em>Join the conversation</em></p>
+</div>
+</div>
+</div>
+</div>
+<!-- Quantcast Tag -->
+<script>
+(function(){
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/aquant.js?a=p-zfNtLVVEHXE-1";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem,scpt);
+}());
+var smarttagdata={qacct: 'p-zfNtLVVEHXE-1',
+orderid: '',
+revenue: '',
+};
+</script>
+<noscript>
+&lt;img src="//pixel.quantserve.com/pixel/p-zfNtLVVEHXE-1.gif?labels=_fp.event.Default;" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/&gt;
+</noscript>
+<!-- End Quantcast tag -->
+<!-- BEGIN Google Code for UK and .COM Domains-->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1023777138;
+var google_conversion_label = "SVIBCMq3xwIQ8rKW6AM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/conversion.js">
+</script><iframe name="google_conversion_frame" title="Google conversion frame" width="300" height="13" src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/saved_resource.html" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no">&lt;img height="1" width="1" border="0" alt="" src="http://googleads.g.doubleclick.net/pagead/viewthroughconversion/1023777138/?frame=0&amp;random=1438507896109&amp;cv=7&amp;fst=1438507896109&amp;num=1&amp;fmt=1&amp;label=SVIBCMq3xwIQ8rKW6AM&amp;guid=ON&amp;eid=42631043&amp;u_h=768&amp;u_w=1366&amp;u_ah=728&amp;u_aw=1366&amp;u_cd=24&amp;u_his=1&amp;u_tz=270&amp;u_java=true&amp;u_nplug=6&amp;u_nmime=8&amp;frm=0&amp;url=http%3A//nl.mathworks.com/help/gads/ga.html" /&gt;</iframe>
+<noscript>
+&lt;div style="display:inline;"&gt;
+&lt;img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1023777138/?value=0&amp;label=SVIBCMq3xwIQ8rKW6AM&amp;guid=ON&amp;script=0"/&gt;
+&lt;/div&gt;
+</noscript>
+<!-- END Google Code for UK and .COM Domains-->
+<!-- BEGIN Adobe DTM -->
+<script type="text/javascript">
+try {
+_satellite.pageBottom();
+} catch (e) {
+//something went wrong
+}
+</script>
+<!-- END Adobe DTM -->
+<!-- SiteCatalyst code version: H.24.4.
+Copyright 1996-2012 Adobe, Inc. All Rights Reserved
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="./Find minimum of function using genetic algorithm - MATLAB ga - MathWorks Benelux_files/s_code.js"></script>
+<script language="JavaScript" type="text/javascript">
+<!--
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.24.4. -->
+<!-- BEGIN Qualaroo -->
+<script type="text/javascript">
+var _kiq = _kiq || [];
+(function(){
+setTimeout(function(){
+var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script'); s.type = 'text/javascript';
+s.async = true; s.src = '//s3.amazonaws.com/ki.js/49559/ahy.js'; f.parentNode.insertBefore(s, f);
+}, 1);
+})();
+</script>
+<!-- END Qualaroo -->
+      </div>
+    </footer>
+
+  </div>
+
+
+
+<a class="btn btn_primary" id="go-top" style="display: inline;"><span class="icon-arrow-open-up icon_24"></span></a><span id="MathEquationRendererScratch" class="MathEquation Windows" style="position: absolute; right: -1000px; bottom: -1000px; white-space: pre-wrap;"></span></body></html>
